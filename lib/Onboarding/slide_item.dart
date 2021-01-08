@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trial/Onboarding/slider.dart';
+import './slider.dart';
 
 class SlideItem extends StatelessWidget {
   final int index;

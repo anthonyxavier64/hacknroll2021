@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:trial/onboarding/slide_dots.dart';
-import 'package:trial/onboarding/slide_item.dart';
+import './Onboarding/slide_dots.dart';
+import './Onboarding/slide_item.dart';
 import 'package:flutter/material.dart';
-import 'package:trial/authentication/signup.dart';
-import 'package:trial/authentication/login.dart';
+import './authentication/signup.dart';
+import './authentication/login.dart';
 
 
 class MyHomePage extends StatefulWidget {

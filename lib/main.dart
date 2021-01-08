@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hacknroll2021/MyHomePage.dart';
 import 'package:hacknroll2021/pages/registration_page.dart';
 import 'package:hacknroll2021/services/auth.dart';
 import 'pages/login_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
-              home: RegistrationPage(),
+              home: MyHomePage(),
               routes: {
                 RegistrationPage.routeName: (ctx) => RegistrationPage(),
               },
