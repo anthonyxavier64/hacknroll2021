@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/MyHomePage.dart';
 import 'package:hacknroll2021/authentication/signup.dart';
+import 'package:hacknroll2021/pages/home_page.dart';
 import 'package:hacknroll2021/services/auth.dart';
 import 'authentication/login.dart';
 import 'package:provider/provider.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
               routes: {
                 RegistrationPage.routeName: (ctx) => RegistrationPage(),
                 LoginPage.routeName: (ctx) => LoginPage(),
+                HomePage.routeName: (ctx) => HomePage(),
               },
             ),
           );

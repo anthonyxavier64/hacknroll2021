@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import './authentication/signup.dart';
 import './authentication/login.dart';
 
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -21,19 +20,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < 4) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
+    Timer.periodic(
+      Duration(seconds: 5),
+      (Timer timer) {
+        if (_currentPage < 4) {
+          _currentPage++;
+        } else {
+          _currentPage = 0;
+        }
 
-      _pageController.animateToPage(
-        _currentPage,
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeIn,
-      );
-    });
+        if (_pageController.hasClients) {
+          _pageController.animateToPage(
+            _currentPage,
+            duration: Duration(milliseconds: 300),
+            curve: Curves.easeIn,
+          );
+        }
+      },
+    );
   }
 
   _onPageChanged(int index) {
@@ -150,14 +154,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                 borderRadius: new BorderRadius.circular(8.0)),
                             padding:
                                 EdgeInsets.only(top: 7.0, bottom: 7.0, left: 0),
-                           onPressed: () {
+                            onPressed: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => LoginPage(),
                                 ),
                               );
                             },
-                           
                             child: new Row(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[

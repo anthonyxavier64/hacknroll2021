@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknroll2021/pages/home_page.dart';
 import 'package:hacknroll2021/widgets/custom_text_field.dart';
 import 'package:hacknroll2021/services/auth.dart';
 
@@ -68,7 +69,10 @@ class _LoginPageState extends State<LoginPage> {
                       try {
                         await _auth.signInWithEmailAndPassword(
                             _email, _password);
-                        print('log in');
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          HomePage.routeName,
+                          (route) => false,
+                        );
                       } catch (e) {}
                     },
                   )

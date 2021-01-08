@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/dummy_data.dart';
+import 'package:hacknroll2021/pages/home_page.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
 import 'package:hacknroll2021/widgets/custom_text_field.dart';
 import '../services/auth.dart';
@@ -152,6 +153,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           faculty: this._facultySelected.trim(),
                           fullname: this._fullname.trim(),
                           interests: this._interests,
+                        );
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          HomePage.routeName,
+                          (route) => false,
                         );
                       } catch (e) {
                         print(e);
