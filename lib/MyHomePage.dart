@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:hacknroll2021/authentication/signup.dart';
 import 'package:hacknroll2021/authentication/login.dart';
 
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();

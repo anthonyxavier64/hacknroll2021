@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './slider.dart';
+//import 'package:Cycled_iOS/onboarding/slider.dart';
+import '../onboarding/slider.dart';
 
 class SlideItem extends StatelessWidget {
   final int index;
@@ -16,7 +17,7 @@ class SlideItem extends StatelessWidget {
           height: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(slideList[index].image),
+              image: AssetImage(slideList[index].imageUrl),
               fit: BoxFit.fill,
             ),
           ),
@@ -43,7 +44,7 @@ class SlideItem extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
-              color: Colors.black,
+              color: Colors.green[900],
             ),
           ),
         ),
@@ -51,4 +52,3 @@ class SlideItem extends StatelessWidget {
     );
   }
 }
-
