@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/login_page.dart';
+import 'package:hacknroll2021/pages/registration_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => RegistrationPage(),
       },
     );
   }
