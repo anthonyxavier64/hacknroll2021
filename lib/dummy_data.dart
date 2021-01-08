@@ -1,7 +1,7 @@
 class DummyData {
   final List<String> faculties = [
     'Arts & Social Sciences',
-    'Buiness',
+    'Business',
     'Computing',
     'Continuing and Lifelong Education',
     'Dentistry',
@@ -17,4 +17,8 @@ class DummyData {
     'Science',
     'Yale-NUS',
   ];
+
+  List<String> getFaculties() {
+    return this.faculties;
+  }
 }

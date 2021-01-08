@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknroll2021/pages/home_page.dart';
 
 import 'package:hacknroll2021/pages/registration_page.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => RegistrationPage(),
+        '/': (context) => HomePage(),
       },
     );
   }
