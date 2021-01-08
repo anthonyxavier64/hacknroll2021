@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830047272017",
+    "project_id": "chak-7383a",
+    "storage_bucket": "chak-7383a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830047272017:android:27dafa2d0345d3a8c28c70",
+        "android_client_info": {
+          "package_name": "com.company.CHAKmate2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830047272017-nmcblev04oke8bbea89fjvuod9mtipee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi1WFHfuG14Cs1Oi8uXSSvQmBcOgowk1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830047272017-nmcblev04oke8bbea89fjvuod9mtipee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
