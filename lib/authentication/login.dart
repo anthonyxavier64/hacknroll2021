@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/pages/home_page.dart';
+import 'package:hacknroll2021/screens/faculty_list_page/faculty_list_page.dart';
 import 'package:hacknroll2021/widgets/custom_text_field.dart';
 import 'package:hacknroll2021/services/auth.dart';
 
