@@ -16,7 +16,7 @@ class SlideItem extends StatelessWidget {
           height: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(slideList[index].imageUrl),
+              image: AssetImage(slideList[index].image),
               fit: BoxFit.fill,
             ),
           ),
@@ -51,3 +51,4 @@ class SlideItem extends StatelessWidget {
     );
   }
 }
+
