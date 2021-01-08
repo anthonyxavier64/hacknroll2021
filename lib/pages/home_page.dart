@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/dummy_data.dart';
+import 'package:hacknroll2021/services/auth.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,11 +15,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<String> faculties = DummyData().getFaculties();
 
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('List of Faculties'),
+          actions: [
+            FlatButton(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              child: Text('Logout'),
+              color: Colors.grey,
+            ),
+          ],
         ),
         body: Scrollbar(
           child: GridView.count(

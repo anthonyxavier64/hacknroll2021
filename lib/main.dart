@@ -4,11 +4,11 @@ import 'package:hacknroll2021/MyHomePage.dart';
 import 'package:hacknroll2021/authentication/signup.dart';
 import 'package:hacknroll2021/pages/home_page.dart';
 import 'package:hacknroll2021/services/auth.dart';
+import 'package:hacknroll2021/wrapper.dart';
 import 'authentication/login.dart';
 import 'package:provider/provider.dart';
 import './models/user.dart';
 import './widgets/loading.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
-              home: MyHomePage(),
+              home: Wrapper(),
               routes: {
                 RegistrationPage.routeName: (ctx) => RegistrationPage(),
                 LoginPage.routeName: (ctx) => LoginPage(),

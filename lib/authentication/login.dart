@@ -70,10 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       try {
                         await _auth.signInWithEmailAndPassword(
                             _email.trim(), _password.trim());
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                          HomePage.routeName,
-                          (route) => false,
-                        );
+                        Navigator.pop(context);
                       } catch (e) {}
                     },
                   )

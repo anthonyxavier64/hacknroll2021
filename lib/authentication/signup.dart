@@ -154,10 +154,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           fullname: this._fullname.trim(),
                           interests: this._interests,
                         );
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                          HomePage.routeName,
-                          (route) => false,
-                        );
+                        Navigator.pop(context);
                       } catch (e) {
                         print(e);
                       }
