@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/dummy_data.dart';
+
+import 'package:hacknroll2021/MyHomePage.dart';
 import 'package:hacknroll2021/services/auth.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
 
@@ -26,7 +28,10 @@ class _HomePageState extends State<HomePage> {
           actions: [
             FlatButton(
               onPressed: () async {
-                await _auth.signOut();
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => MyHomePage()));
               },
               child: Text('Logout'),
               color: Colors.grey,
