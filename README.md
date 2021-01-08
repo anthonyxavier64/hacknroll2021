@@ -1,16 +1,11 @@
-# hacknroll2021
+# hacknroll2021 : ChakMate
 
-A new Flutter project.
+As second year students, we found it extremely difficult to form project teams and often turn to Telegram to ask for partners but often to no avail. Indeed, university projects are already difficult and working with unfamiliar teams in a short span of time simply doesnt work. 
 
-## Getting Started
+Therefore, ChakMate is a must have app for any student in school. 
+- Find friends in the same course 
+- Add them and work together for projects as a group 
 
-This project is a starting point for a Flutter application.
+## Guide
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Written in Flutter and Firebase, students can create profiles based on their faculties and interests. They have the ability to add others of similar background as well, forming friends. A quick and simple process! 
