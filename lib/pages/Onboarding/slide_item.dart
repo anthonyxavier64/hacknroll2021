@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Cycled_iOS/onboarding/slider.dart';
+import '../onboarding/slider.dart';
 
 class SlideItem extends StatelessWidget {
   final int index;
