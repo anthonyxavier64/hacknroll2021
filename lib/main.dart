@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-import 'package:trial/MyHomePage.dart';
-=======
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/pages/registration_page.dart';
@@ -10,25 +6,12 @@ import 'pages/login_page.dart';
 import 'package:provider/provider.dart';
 import './models/user.dart';
 import './widgets/loading.dart';
->>>>>>> master
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-<<<<<<< HEAD
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Cycled',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'SFProText',
-      ),
-      home: new MyHomePage(),
-=======
   @override
   Widget build(BuildContext context) {
     // Once complete, show your application
@@ -60,7 +43,6 @@ class MyApp extends StatelessWidget {
 
         return Loading();
       },
->>>>>>> master
     );
   }
 }

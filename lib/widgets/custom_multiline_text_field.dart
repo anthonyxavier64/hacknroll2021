@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomMultilineTextField extends StatelessWidget {
   final String labelText;
-<<<<<<< HEAD
-
-  CustomMultilineTextField({this.labelText = ''});
-=======
   final Function function;
 
   CustomMultilineTextField({
     this.labelText = '',
     this.function,
   });
->>>>>>> master
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +41,7 @@ class CustomMultilineTextField extends StatelessWidget {
           ),
         ),
         maxLines: 5,
-<<<<<<< HEAD
-=======
         onChanged: function,
->>>>>>> master
       ),
     );
   }
