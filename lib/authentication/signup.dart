@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
-import 'DummyData.dart';
-import 'custom_multiline_text_field.dart';
-import 'custom_text_field.dart';
+import 'package:hacknroll2021/dummy_data.dart';
+import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
+import 'package:hacknroll2021/widgets/custom_text_field.dart';
+import '../services/auth.dart';
 
 class RegistrationPage extends StatefulWidget {
+  static const routeName = './registrationpage';
+
   @override
   _RegistrationPageState createState() => _RegistrationPageState();
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
-  ScrollController controller;
   String _email = '';
   String _password = '';
   String _fullname = '';
+  String _interests = '';
   String _facultySelected;
 
   final _formKey = GlobalKey<FormState>();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +125,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   CustomMultilineTextField(
                     labelText:
                         'List your interests!\n(Use  ","  to separate them)',
+                    function: (val) => setState(
+                      () {
+                        this._interests = val;
+                      },
+                    ),
                   ),
                   SizedBox(height: 25),
                   FlatButton(
@@ -134,7 +143,20 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     color: Theme.of(context).primaryColor,
-                    onPressed: () {},
+                    onPressed: () async {
+                      try {
+                        dynamic result =
+                            await _auth.registerWithEmailAndPassword(
+                          email: this._email.trim(),
+                          password: this._password.trim(),
+                          faculty: this._facultySelected.trim(),
+                          fullname: this._fullname.trim(),
+                          interests: this._interests,
+                        );
+                      } catch (e) {
+                        print(e);
+                      }
+                    },
                   ),
                 ],
               ),
