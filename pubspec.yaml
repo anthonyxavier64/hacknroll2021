@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-name: trial
-=======
 name: hacknroll2021
->>>>>>> 54518c91a433fdd2368cc247bc41b20715327a03
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -27,21 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
-  font_awesome_flutter:  8.11.0 
-=======
->>>>>>> 54518c91a433fdd2368cc247bc41b20715327a03
+  font_awesome_flutter:  8.11.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-<<<<<<< HEAD
- 
-=======
   cupertino_icons: ^0.1.3
   firebase_auth: ^0.18.4+1
   cloud_firestore: ^0.14.4
->>>>>>> 54518c91a433fdd2368cc247bc41b20715327a03
 
 dev_dependencies:
   flutter_test:
@@ -88,11 +77,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-<<<<<<< HEAD
 
   assets:
     - school.png
     - third.png
     - last.png
-=======
->>>>>>> 54518c91a433fdd2368cc247bc41b20715327a03

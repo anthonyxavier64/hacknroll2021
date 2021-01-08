@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trial/MyHomePage.dart';
+import 'package:hacknroll2021/MyHomePage.dart';
 
 void main() {
   runApp(MyApp());
