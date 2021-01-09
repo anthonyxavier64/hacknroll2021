@@ -41,13 +41,6 @@ class _FacultyListPageState extends State<FacultyListPage> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    //var data = StudentDatabaseService().getStudentData();
-    //print(data);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
