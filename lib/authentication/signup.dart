@@ -18,6 +18,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   String _fullname = '';
   String _interests = '';
   String _facultySelected;
+  int _yearOfStudySelected;
 
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
@@ -123,6 +124,43 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   SizedBox(
                     height: 25,
                   ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20,
+                      right: 200,
+                    ),
+                    child: DropdownButtonFormField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).primaryColor),
+                        ),
+                      ),
+                      hint: Text(
+                        'Select year of study',
+                        style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                      value: _yearOfStudySelected,
+                      items: DummyData()
+                          .yearOfStudy
+                          .map((year) => DropdownMenuItem(
+                                child: Text('$year'),
+                                value: year,
+                              ))
+                          .toList(),
+                      onChanged: (val) => setState(
+                        () {
+                          this._yearOfStudySelected = val;
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
                   CustomMultilineTextField(
                     labelText:
                         'List your interests!\n(Use  ","  to separate them)',
@@ -152,6 +190,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           password: this._password.trim(),
                           faculty: this._facultySelected.trim(),
                           fullname: this._fullname.trim(),
+                          yearOfStudy: this._yearOfStudySelected,
                           interests: this._interests,
                         );
                         Navigator.pop(context);

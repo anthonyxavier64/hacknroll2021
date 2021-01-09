@@ -18,6 +18,12 @@ class DummyData {
     'Yale-NUS',
   ];
 
+  final List<int> yearOfStudy = [1, 2, 3, 4, 5];
+
+  List<int> getYearOfStudy() {
+    return this.yearOfStudy;
+  }
+
   List<String> getFaculties() {
     return this.faculties;
   }

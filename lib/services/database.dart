@@ -11,11 +11,13 @@ class DatabaseService {
     String fullname,
     String faculty,
     String interests,
+    int yearOfStudy,
   }) async {
     return await studentCollection.doc(uid).set({
       'fullname': fullname,
       'faculty': faculty,
       'interests': interests,
+      'yearOfStudy': yearOfStudy,
     });
   }
 }
