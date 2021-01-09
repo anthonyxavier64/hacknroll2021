@@ -34,8 +34,12 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(
                         builder: (BuildContext context) => MyHomePage()));
               },
-              child: Text('Logout'),
-              color: Colors.grey,
+              child: Icon(
+                Icons.logout,
+                color: Theme.of(context).scaffoldBackgroundColor,
+              ),
+              minWidth: 60,
+              color: Colors.red[300],
             ),
           ],
         ),

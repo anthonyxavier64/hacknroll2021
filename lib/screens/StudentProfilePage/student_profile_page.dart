@@ -75,6 +75,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal[200],
+
         child: Icon(Icons.add),
         onPressed: () async {
           await FirebaseFirestore.instance
@@ -82,6 +83,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
               .doc('$currentUserUID')
               .collection('friends')
               .add({widget.studentItem[0]: widget.studentItem[1]});
+          await _showFriendAddedDialog();
 /*           Object currentUserData;
           currentUserData = await FirebaseFirestore.instance
               .collection('students')
@@ -116,5 +118,42 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
               fontWeight: FontWeight.w600,
               fontSize: 15),
         ));
+  }
+
+  Future<void> _showFriendAddedDialog() {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Success',
+            style: TextStyle(
+                fontFamily: 'MontSerrat',
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 22),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "${this.widget.studentItem[1]['name']} has been added to Friends!",
+                  style: TextStyle(fontFamily: 'MontSerrat'),
+                )
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('DONE'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
+        );
+      },
+    );
   }
 }

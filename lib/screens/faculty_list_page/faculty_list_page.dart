@@ -16,9 +16,9 @@ class FacultyListPage extends StatefulWidget {
 
 class _FacultyListPageState extends State<FacultyListPage> {
   bool viewStudentList = true;
-  bool isLoading = true;
   List students = [];
-  
+  bool isLoading = true;
+
   @override
   void initState() {
     // TODO: implement initState
