@@ -33,7 +33,8 @@ class _FacultyListPageState extends State<FacultyListPage> {
         .where('faculty', isEqualTo: widget.faculty)
         .get();
     for (int i = 0; i < result.docs.length; i++) {
-      students.add(result.docs[i].data());
+      List array = [result.docs[i].id, result.docs[i].data()];
+      students.add(array);
     }
     setState(() {
       isLoading = false;
@@ -113,17 +114,19 @@ class _FacultyListPageState extends State<FacultyListPage> {
           itemCount: this.students.length,
           itemBuilder: (BuildContext context, int index) {
             return _buildStudentCard(
-              this.students[index]['fullname'],
-              this.students[index]['faculty'],
-              this.students[index]['yearOfStudy'],
-              this.students[index]['interests'],
+              this.students[index],
             );
           }),
     ]));
   }
 
   Widget _buildStudentCard(
-      String name, String faculty, String year, String interests) {
+      List studentItem) {
+    final String name = studentItem[1]['fullname'];
+    final String faculty = studentItem[1]['faculty'];
+    final int year = studentItem[1]['yearOfStudy'];
+    final String interests = studentItem[1]['interests'];
+
     return Container(
       decoration: BoxDecoration(
         border: Border(
@@ -142,7 +145,7 @@ class _FacultyListPageState extends State<FacultyListPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "$name",
+              name,
               style: TextStyle(
                   fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
             ),
@@ -156,7 +159,7 @@ class _FacultyListPageState extends State<FacultyListPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (_) =>
-                  StudentProfilePage(name, faculty, year, interests),
+                  StudentProfilePage(studentItem),
             ),
           );
         },

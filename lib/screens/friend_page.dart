@@ -111,12 +111,7 @@ class _FriendPageState extends State<FriendPage> {
         dense: true,
         isThreeLine: true,
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) =>
-                  StudentProfilePage(name, faculty, year, interests),
-            ),
-          );
+
         },
       ),
     );
