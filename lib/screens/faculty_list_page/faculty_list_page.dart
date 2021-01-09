@@ -1,8 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/screens/StudentProfilePage/student_profile_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hacknroll2021/services/student_database.dart';
 
 class FacultyListPage extends StatefulWidget {
+  final String faculty;
+
+  FacultyListPage(this.faculty);
+
   @override
   _FacultyListPageState createState() => _FacultyListPageState();
 }
@@ -17,12 +23,19 @@ class _FacultyListPageState extends State<FacultyListPage> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    //var data = StudentDatabaseService().getStudentData();
+    //print(data);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          '<Faculty>'
+          '${this.widget.faculty}'
         ),
       ),
       body: Container(
@@ -124,10 +137,6 @@ class _FacultyListPageState extends State<FacultyListPage> {
               "$name",
               style: TextStyle(
                   fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
-            ),
-            Text(
-              "Faculty of $faculty",
-              style: TextStyle(fontFamily: 'Montserrat'),
             ),
           ],
         ),

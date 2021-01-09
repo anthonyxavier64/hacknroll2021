@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hacknroll2021/dummy_data.dart';
 
 import 'package:hacknroll2021/MyHomePage.dart';
+import 'package:hacknroll2021/screens/faculty_list_page/faculty_list_page.dart';
 import 'package:hacknroll2021/services/auth.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
 
@@ -48,7 +49,13 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               for (var i in faculties)
                 FlatButton(
-                  onPressed: () => log("Button Pressed"),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => FacultyListPage(i.toString()),
+                      ),
+                    );
+                  },
                   padding: const EdgeInsets.all(8),
                   child: Text(i.toString()),
                   shape: RoundedRectangleBorder(
