@@ -2,7 +2,7 @@
 
 As second year students, we found it extremely difficult to form project teams and often turn to Telegram to ask for partners but often to no avail. Indeed, university projects are already difficult and working with unfamiliar teams in a short span of time simply doesnt work. 
 
-Therefore, ChakMate is a must have app for any student in school. 
+Therefore, Let's Find! is a must have app for any student in school. 
 - Find friends in the same course 
 - Add them and work together for projects as a group 
 

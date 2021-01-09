@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hacknroll2021/pages/home_page.dart';
+import 'package:hacknroll2021/screens/friend_page.dart';
 
 class MainInterface extends StatefulWidget {
   @override
@@ -67,17 +68,25 @@ class _MainInterfaceState extends State<MainInterface> {
                             HomePage(); // if user taps on this dashboard tab will be active
                         currentTab = 0;
                       });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return FriendPage();
+                          },
+                        ),
+                      );
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.chat,
+                          Icons.group,
                           color:
                               currentTab == 0 ? Colors.green[900] : Colors.grey,
                         ),
                         Text(
-                          'Chat',
+                          'Friends',
                           style: TextStyle(
                             color: currentTab == 0
                                 ? Colors.green[900]

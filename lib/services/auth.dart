@@ -45,6 +45,7 @@ class AuthService {
     String password,
     String fullname,
     String faculty,
+    int yearOfStudy,
     String interests,
   }) async {
     try {
@@ -55,6 +56,7 @@ class AuthService {
         fullname: fullname,
         faculty: faculty,
         interests: interests,
+        yearOfStudy: yearOfStudy,
       );
       return _userFromFirebaseUser(user);
     } catch (e) {

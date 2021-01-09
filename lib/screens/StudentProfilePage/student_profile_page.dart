@@ -54,9 +54,11 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal[200],
         child: Icon(
-            Icons.message
+            Icons.person_add
         ),
-        onPressed: () {},
+        onPressed: () async {
+          await _showFriendAddedDialog();
+        },
       ),
     );
   }
@@ -80,6 +82,43 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
         '${this.widget.interests}',
         style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w600, fontSize: 15),
       )
+    );
+  }
+
+  Future<void> _showFriendAddedDialog() {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Success',
+            style: TextStyle(
+                fontFamily: 'MontSerrat',
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 22),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "${this.widget.name} has been added to Friends!",
+                  style: TextStyle(fontFamily: 'MontSerrat'),
+                )
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('DONE'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
+        );
+      },
     );
   }
 }
