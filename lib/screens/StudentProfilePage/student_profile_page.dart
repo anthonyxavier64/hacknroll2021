@@ -82,11 +82,16 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
               .doc('$currentUserUID')
               .collection('friends')
               .add({widget.studentItem[0]: widget.studentItem[1]});
-/*           Object currentUserData;
+          DocumentSnapshot currentUserData;
           currentUserData = await FirebaseFirestore.instance
               .collection('students')
-              .doc(this.widget.studentItem[0]).snapshots();
-          print(currentUserData); */
+              .doc('$currentUserUID')
+              .get();
+          await FirebaseFirestore.instance
+              .collection('students')
+              .doc('${widget.studentItem[0]}')
+              .collection('friends')
+              .add({this.currentUserUID: currentUserData.data()});
         },
       ),
     );
