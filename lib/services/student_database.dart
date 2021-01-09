@@ -6,15 +6,11 @@ class StudentDatabaseService {
   final CollectionReference studentCollection =
   FirebaseFirestore.instance.collection('students');
 
-  Future getStudentData({
+  Future<QuerySnapshot> getStudentData({
     String fullname,
     String faculty,
     String interests,
   }) async {
-    QuerySnapshot query = await studentCollection.get();
-    for (int i = 0; i < query.docs.length; i++) {
-      var a = query.docs[i];
-      print(a);
-    }
+    return await studentCollection.get();
   }
 }

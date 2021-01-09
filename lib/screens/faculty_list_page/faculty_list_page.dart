@@ -21,12 +21,29 @@ class _FacultyListPageState extends State<FacultyListPage> {
     {'name': 'Kieron Koh', 'faculty': 'Computing', 'year': 'Year 2', 'interests': '<Interests>'},
     {'name': 'Chew Hoa Shen', 'faculty': 'Computing', 'year': 'Year 2', 'interests': '<Interests>'}
   ];
+  List students = [];
+  bool isLoading = true;
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    //var data = StudentDatabaseService().getStudentData();
-    //print(data);
+    _getStudents();
+    print(this.students);
+  }
+
+  _getStudents() async {
+    QuerySnapshot result;
+    result = await FirebaseFirestore.instance
+        .collection('students')
+        .where('faculty', isEqualTo: widget.faculty)
+        .get();
+    for (int i = 0; i < result.docs.length; i++) {
+      students.add(result.docs[i].data());
+    }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
