@@ -4,6 +4,7 @@ import 'package:hacknroll2021/pages/home_page.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
 import 'package:hacknroll2021/widgets/custom_text_field.dart';
 import '../services/auth.dart';
+import 'package:hacknroll2021/MainInterface.dart';
 
 class RegistrationPage extends StatefulWidget {
   static const routeName = './registrationpage';
@@ -64,7 +65,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   CustomTextField(
                     leftMargin: 20,
                     rightMargin: 20,
-                    labelText: 'Password',
+                    labelText: 'Password. Min: 6 characters',
                     function: (val) => setState(
                       () {
                         this._password = val;
@@ -193,7 +194,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           yearOfStudy: this._yearOfStudySelected,
                           interests: this._interests,
                         );
-                        Navigator.pop(context);
+                        
+                           Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => MainInterface()));
                       } catch (e) {
                         print(e);
                       }

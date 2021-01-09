@@ -2,6 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:hacknroll2021/dummy_data.dart';
+<<<<<<< HEAD
+=======
+
+import 'package:hacknroll2021/MyHomePage.dart';
+>>>>>>> eb38d56fe6dd1111b36e385693c996a86549cbdf
 import 'package:hacknroll2021/screens/faculty_list_page/faculty_list_page.dart';
 import 'package:hacknroll2021/services/auth.dart';
 import 'package:hacknroll2021/widgets/custom_multiline_text_field.dart';
@@ -22,11 +27,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('List of Faculties'),
           actions: [
             FlatButton(
               onPressed: () async {
-                await _auth.signOut();
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => MyHomePage()));
               },
               child: Text('Logout'),
               color: Colors.grey,

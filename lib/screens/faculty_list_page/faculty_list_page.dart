@@ -41,6 +41,13 @@ class _FacultyListPageState extends State<FacultyListPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    //var data = StudentDatabaseService().getStudentData();
+    //print(data);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -145,10 +152,6 @@ class _FacultyListPageState extends State<FacultyListPage> {
               "$name",
               style: TextStyle(
                   fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
-            ),
-            Text(
-              "Faculty of $faculty",
-              style: TextStyle(fontFamily: 'Montserrat'),
             ),
           ],
         ),
